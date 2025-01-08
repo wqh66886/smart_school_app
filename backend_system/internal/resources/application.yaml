@@ -1,0 +1,12 @@
+server:
+  port: 5678
+  application-name: smart-school
+  version: 1.0.0
+  context-path: /smart/school
+
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  database: smart_school
+  username: root
+  password: wqh19980729
