@@ -2,6 +2,7 @@ package db
 
 import (
 	"fmt"
+	"github.com/wqh/smart/school/system/internal/domain"
 	"log"
 
 	"github.com/wqh/smart/school/system/internal/configs"
@@ -23,4 +24,5 @@ func InitMysql(db *gorm.DB, config configs.Config) {
 	if err != nil {
 		log.Fatalf("mysql connect error %v", err)
 	}
+	db.AutoMigrate(domain.User{}, domain.School{})
 }

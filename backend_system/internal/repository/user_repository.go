@@ -1,4 +1,4 @@
-package mapper
+package repository
 
 import "github.com/wqh/smart/school/system/internal/domain"
 
@@ -8,7 +8,8 @@ import "github.com/wqh/smart/school/system/internal/domain"
 * date: 2025/1/8
  */
 
-type UserMapper interface {
+type UserRepository interface {
 	CreateUser(user *domain.User) error
-	GetUserByUsername(username string) (*domain.User, error)
+	GetUserByPhone(phone string) (*domain.User, error)
+	UpdateUserInfo(user *domain.User) error
 }

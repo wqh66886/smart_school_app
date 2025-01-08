@@ -14,4 +14,12 @@ type Config struct {
 		Password string `yaml:"password"`
 		Database string `yaml:"database"`
 	} `yaml:"mysql"`
+	Redis struct {
+		Host        string `yaml:"host"`
+		Port        string `yaml:"port"`
+		Password    string `yaml:"password"`
+		Database    int    `yaml:"database"`
+		Username    string `yaml:"username"`
+		ConnectType string `mapstructure:"connect-type"`
+	} `yaml:"redis"`
 }

@@ -1,11 +1,11 @@
 package middleware
 
 import (
+	"github.com/wqh/smart/school/system/internal/errorx"
+	"github.com/wqh/smart/school/system/response"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/wqh/safe/come/home/internal/errorx"
-	"github.com/wqh/safe/come/home/internal/response"
 )
 
 func ErrorHandler() gin.HandlerFunc {

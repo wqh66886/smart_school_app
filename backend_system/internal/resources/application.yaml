@@ -10,3 +10,16 @@ mysql:
   database: smart_school
   username: root
   password: wqh19980729
+
+redis:
+  connect-type: common #common/TLS/SSH
+  host: 127.0.0.1
+  port: 6379
+  database: 0
+  username:
+  password:
+
+sms:
+  sign-name: "smart school"
+  template-code: "SMS_0000000"
+  
