@@ -33,7 +33,7 @@ func GetPwd(pwd string) (string, error) {
 func ComparePwd(pwd1 string, pwd2 string) bool {
 	// Returns true on success, pwd1 is for the database.
 	err := bcrypt.CompareHashAndPassword([]byte(pwd1), []byte(pwd2))
-	return err != nil
+	return err == nil //err == nil 为密码正确的
 }
 
 func ParseTime(date string) time.Time {

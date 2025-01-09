@@ -9,6 +9,6 @@ import "github.com/wqh/smart/school/system/internal/domain"
  */
 
 type SchoolRepository interface {
-	CreateSchool(school *domain.School) error
 	GetSchoolByCode(code string) (*domain.School, error)
+	SearchAllSchool() ([]domain.School, error)
 }

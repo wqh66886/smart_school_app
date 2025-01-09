@@ -34,6 +34,14 @@ func (u *userUseCase) GetUserByPhone(phone string) (*domain.User, error) {
 	return &user, nil
 }
 
+func (u *userUseCase) GetUserByEmail(email string) (*domain.User, error) {
+	var user domain.User
+	if err := u.db.Model(&domain.User{}).Where("email = ?", email).First(&user).Error; err != nil {
+		return nil, err
+	}
+	return &user, nil
+}
+
 func (u *userUseCase) UpdateUserInfo(user *domain.User) error {
 	err := u.db.Transaction(func(tx *gorm.DB) error {
 		return tx.Save(user).Error

@@ -10,6 +10,7 @@ import "time"
 
 type User struct {
 	Base
+	Email    string    `json:"email" gorm:"unique;not null"`
 	Phone    string    `json:"phone" gorm:"unique;not null"`
 	Username string    `json:"username" gorm:"not null"`
 	Password string    `json:"password" gorm:"not null"`

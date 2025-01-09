@@ -15,11 +15,12 @@ import (
 * date: 2025/1/8
  */
 type UserController struct {
-	userSrv *service.UserService
+	userSrv   *service.UserService
+	schoolSrv *service.SchoolService
 }
 
-func NewUserController(userSrv *service.UserService) *UserController {
-	return &UserController{userSrv: userSrv}
+func NewUserController(userSrv *service.UserService, schoolSrv *service.SchoolService) *UserController {
+	return &UserController{userSrv: userSrv, schoolSrv: schoolSrv}
 }
 
 func (uc *UserController) Register(ctx *gin.Context) {
