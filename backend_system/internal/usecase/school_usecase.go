@@ -23,8 +23,8 @@ func (s *schoolUseCase) GetSchoolByCode(code string) (*domain.School, error) {
 	return &school, nil
 }
 
-func (s *schoolUseCase) SearchAllSchool() ([]domain.User, error) {
-	var schools []domain.User
+func (s *schoolUseCase) SearchAllSchool() ([]domain.School, error) {
+	var schools []domain.School
 	if err := s.db.Find(&schools).Error; err != nil {
 		return nil, err
 	}

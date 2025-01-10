@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"github.com/wqh/smart/school/system/internal/middleware"
+	"github.com/wqh/smart/school/system/internal/router"
 	"log"
 	"net/http"
 	"os"
@@ -30,6 +31,7 @@ func main() {
 	})
 	engine.Use(middleware.Cors())
 	engine.Use(middleware.ErrorHandler())
+	router.InitRouter(engine)
 
 	srv := &http.Server{
 		Addr:    ":8080",
